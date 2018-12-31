@@ -6,10 +6,13 @@
 </head>
 <body>
 	<div class="container">
-		<H1>ダッシュボード </H1>
+		<form action="#" th:action="@{/logout}" method="POST">
+			<button type="submit">Logout</button>
+		</form>
+		<H1>ダッシュボード</H1>
 		<div class="row">
 			<div class="col-sm-4" style="background-color: lavender;">
-				<img src="reports/ReportTest.png" width="350" /> <a href="#">棚のリアル在庫情報
+				<img src="reports/ReportTest.png" width="350" /> <a href="/shelf" th:href="@{/shelf}">棚のリアル在庫情報
 				</a>
 			</div>
 			<div class="col-sm-4" style="background-color: lavenderblush;">

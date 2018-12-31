@@ -9,10 +9,10 @@ import com.ck.service.DashboardService;
 
 @Controller
 public class MainController {
-	
+
 	@Autowired
 	DashboardService dashboardService;
-	
+
 	@GetMapping("/")
 	public String index(Model model) {
 		dashboardService.renderReport();
@@ -20,19 +20,24 @@ public class MainController {
 		model.addAttribute("imgReport1", imagePath);
 		return "index";
 	}
-	
-	@GetMapping("/admin") 
+
+	@GetMapping("/admin")
 	public String admin() {
 		return "admin";
 	}
-	
+
 	@GetMapping("/403")
 	public String accessDenied() {
 		return "403";
 	}
-	
-	@GetMapping("/login") 
+
+	@GetMapping("/login")
 	public String getLogin() {
 		return "login";
-	}	
+	}
+	
+	@GetMapping("/shelf")
+	public String getShelf() {
+		return "shelf";
+	}
 }
