@@ -6,20 +6,18 @@
 </head>
 <body>
 	<div class="container">
-		<form action="#" th:action="@{/logout}" method="POST">
-			<button type="submit">Logout</button>
-		</form>
+		<nav th:replace="layout :: header"></nav>
 		<H1>ダッシュボード</H1>
 		<div class="row">
 			<div class="col-sm-4" style="background-color: lavender;">
-				<img src="reports/ReportTest.png" width="350" /> <a href="/shelf" th:href="@{/shelf}">棚のリアル在庫情報
+				<img src="reports/Report1.png" width="360" /> <a href="/shelf" th:href="@{/shelf}">棚のリアル在庫情報
 				</a>
 			</div>
 			<div class="col-sm-4" style="background-color: lavenderblush;">
-				<img src="reports/ReportTest.png" width="350" /> <a href="#">商品の動きパターン一覧</a>
+				<img src="reports/Report2.png" width="360" /> <a href="/product" th:href="@{/shelf}">商品の動きパターン一覧</a>
 			</div>
 			<div class="col-sm-4" style="background-color: lavender;">
-				<img src="reports/ReportTest.png" width="350" /> <a href="#">ミラー前時間別推移グラフ</a>
+				<img src="reports/Report3.png" width="360" height="360"/> <a href="/mirror" th:href="@{/mirror}">ミラー前時間別推移グラフ</a>
 			</div>
 		</div>
 	</div>

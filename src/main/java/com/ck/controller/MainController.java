@@ -16,8 +16,12 @@ public class MainController {
 	@GetMapping("/")
 	public String index(Model model) {
 		dashboardService.renderReport();
-		String imagePath = this.getClass().getResource("/static/reports").getFile() + "/ReportTest.png";
-		model.addAttribute("imgReport1", imagePath);
+//		String imagePath1 = this.getClass().getResource("/static/reports").getFile() + "/Report1.png";
+//		String imagePath2 = this.getClass().getResource("/static/reports").getFile() + "/Report2.png";
+//		String imagePath3 = this.getClass().getResource("/static/reports").getFile() + "/Report3.png";
+//		model.addAttribute("imgReport1", imagePath1);
+//		model.addAttribute("imgReport2", imagePath2);
+//		model.addAttribute("imgReport3", imagePath3);
 		return "index";
 	}
 

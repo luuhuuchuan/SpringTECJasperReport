@@ -67,13 +67,24 @@ public class DashboardServiceImpl implements DashboardService {
 //		params.put("starttime", COMPANY_ID);
 //		params.put("endtime", ORIGIN);
 
-		String jrxmlPath;
-		String imagePath;
+		String jrxmlPath1;
+		String imagePath1;
+		String jrxmlPath2;
+		String imagePath2;
+		String jrxmlPath3;
+		String imagePath3;
 		try {
-			jrxmlPath = this.getClass().getResource("/static/reports").getFile() + "/ReportTest.jrxml";
-			imagePath = this.getClass().getResource("/static/reports").getFile() + "/ReportTest.png";
-			System.out.println(imagePath);
-			renderReport(jrxmlPath, imagePath, params);
+			jrxmlPath1 = this.getClass().getResource("/static/reports").getFile() + "/Report1.jrxml";
+			imagePath1 = this.getClass().getResource("/static/reports").getFile() + "/Report1.png";
+			renderReport(jrxmlPath1, imagePath1, params);
+			
+			jrxmlPath2 = this.getClass().getResource("/static/reports").getFile() + "/Report2.jrxml";
+			imagePath2 = this.getClass().getResource("/static/reports").getFile() + "/Report2.png";
+			renderReport(jrxmlPath2, imagePath2, params);
+			
+//			jrxmlPath3 = this.getClass().getResource("/static/reports").getFile() + "/Report3.jrxml";
+//			imagePath3 = this.getClass().getResource("/static/reports").getFile() + "/Report3.png";
+//			renderReport(jrxmlPath3, imagePath3, params);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
