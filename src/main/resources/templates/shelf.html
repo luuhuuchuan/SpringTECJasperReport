@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="layout :: head">
-<meta charset="ISO-8859-1">
-<title>Shelf</title>
 </head>
 <body>
-	<nav th:replace="layout :: header"]></nav>
+	<nav th:replace="layout :: header"></nav>
 	<div class="container">
-		<h2>Basic Table</h2>
+		<h2>棚のリアル在庫情報</h2>
 		<table class="table">
 			<thead>
 				<tr>
-					<th>Firstname</th>
-					<th>Lastname</th>
-					<th>Email</th>
+					<th>No</th>
+					<th>JANコード</th>
+					<th>商品名</th>
+					<th>件数</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>John</td>
-					<td>Doe</td>
-					<td>john@example.com</td>
-				</tr>				
+				<tr th:each="goodInShelf,iterStat : ${goodsInShelf}">
+					<td th:text="${iterStat.count}"></td>
+					<td th:text="${goodInShelf.jan_code}"></td>
+					<td th:text="${goodInShelf.goods_name}"></td>
+					<td th:text="${goodInShelf.countShelf}"></td>
+				</tr>
 			</tbody>
 		</table>
 	</div>

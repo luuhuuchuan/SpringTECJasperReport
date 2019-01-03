@@ -6,22 +6,20 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.ck.service.DashboardService;
+import com.ck.service.DataminingService;
 
 @Controller
 public class MainController {
 
 	@Autowired
 	DashboardService dashboardService;
+	
+	@Autowired
+	DataminingService dataminingService;
 
 	@GetMapping("/")
 	public String index(Model model) {
 		dashboardService.renderReport();
-//		String imagePath1 = this.getClass().getResource("/static/reports").getFile() + "/Report1.png";
-//		String imagePath2 = this.getClass().getResource("/static/reports").getFile() + "/Report2.png";
-//		String imagePath3 = this.getClass().getResource("/static/reports").getFile() + "/Report3.png";
-//		model.addAttribute("imgReport1", imagePath1);
-//		model.addAttribute("imgReport2", imagePath2);
-//		model.addAttribute("imgReport3", imagePath3);
 		return "index";
 	}
 
@@ -41,7 +39,8 @@ public class MainController {
 	}
 	
 	@GetMapping("/shelf")
-	public String getShelf() {
+	public String getShelf(Model model) {
+		model.addAttribute("goodsInShelf", dataminingService.getGoodsInShelf());
 		return "shelf";
 	}
 }
